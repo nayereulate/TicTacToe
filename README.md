@@ -24,7 +24,7 @@
 
 ---
 
-## 📖 Tabla de Contenidos
+## Tabla de Contenidos
 - [Sobre el Proyecto](#-sobre-el-proyecto)
 - [Reglas del Juego](#-reglas-del-juego)
 - [Capturas de Pantalla](#-capturas-de-pantalla)
@@ -35,7 +35,7 @@
 
 ---
 
-## 🎮 Sobre el Proyecto
+## Sobre el Proyecto
 
 **Super Tic-Tac-Toe** no es el juego que conoces de la infancia. Es un juego de estrategia fractal. Cada celda de un tablero de 3x3 contiene otro tablero completo de 3x3. Tu objetivo es ganar los tableros pequeños para conquistar el tablero grande.
 
@@ -46,7 +46,7 @@
 
 ---
 
-## 📜 Reglas del Juego
+## Reglas del Juego
 
 El juego sigue la mecánica **"Ultimate"**:
 1.  **Destino Forzado:** Si el Jugador 1 mueve en la esquina superior derecha de un cuadro pequeño, el Jugador 2 *debe* realizar su siguiente movimiento en el cuadro grande de la esquina superior derecha.
@@ -55,7 +55,7 @@ El juego sigue la mecánica **"Ultimate"**:
 
 ---
 
-## 🖼️ Capturas de Pantalla
+## Capturas de Pantalla
 
 | Menú Principal | Gameplay Activo | Pantalla de Victoria |
 | :---: | :---: | :---: |
@@ -63,7 +63,7 @@ El juego sigue la mecánica **"Ultimate"**:
 
 ---
 
-## 🛠️ Arquitectura y Tecnologías
+## Arquitectura y Tecnologías
 
 El proyecto está construido bajo los más altos estándares de desarrollo en Java:
 
@@ -72,11 +72,31 @@ El proyecto está construido bajo los más altos estándares de desarrollo en Ja
 * **[Scene Builder](https://www.oracle.com/java/technologies/javafxscenebuilder-info.html):** Diseño de layouts FXML.
 * **[Maven](https://maven.apache.org/):** Gestión de dependencias y ciclo de vida del proyecto.
 
-### Estructura de Clases Principal
-```mermaid
-graph TD
-    A[Main App] --> B[GameController]
-    B --> C[MacroBoard Model]
-    C --> D[MicroBoard Model]
-    D --> E[Cell Status]
-    B --> F[View Layout FXML]
+## Estructura del Proyecto
+
+El proyecto sigue una arquitectura MVC estándar organizada mediante Maven:
+
+```text
+TicTacToe/
+│
+├── .gitignore                # Archivos ignorados por Git (ej. target/)
+├── README.md                 # Documentación del proyecto
+├── LICENSE                   # Licencia de uso
+├── pom.xml                   # Configuración de dependencias Maven
+│
+└── src/
+    ├── main/
+    │   ├── java/com/llaytarootvalley/tresenraya/
+    │   │   ├── App.java              # Entry point de JavaFX
+    │   │   ├── Main.java             # Launcher auxiliar (Fix para JARs)
+    │   │   ├── module-info.java      # Configuración de Módulos Java
+    │   │   ├── controller/           # Controladores (Eventos de UI)
+    │   │   ├── model/                # Lógica de negocio (Tablero, Reglas)
+    │   │   └── util/                 # Utilidades (Alertas, Herramientas)
+    │   │
+    │   └── resources/com/llaytarootvalley/tresenraya/
+    │       ├── view/                 # Archivos .fxml (Diseño visual)
+    │       ├── css/                  # Hojas de estilo
+    │       └── images/               # Assets (Iconos X/O)
+    │
+    └── test/                         # Pruebas Unitarias (JUnit)
