@@ -86,7 +86,7 @@ TicTacToe/
 │
 └── src/
     ├── main/
-    │   ├── java/com/llaytarootvalley/tresenraya/
+    │   ├── java/com/llajtarootvalley/tictactoe/
     │   │   ├── App.java              # Entry point de JavaFX
     │   │   ├── Main.java             # Launcher auxiliar (Fix para JARs)
     │   │   ├── module-info.java      # Configuración de Módulos Java
@@ -94,7 +94,7 @@ TicTacToe/
     │   │   ├── model/                # Lógica de negocio (Tablero, Reglas)
     │   │   └── util/                 # Utilidades (Alertas, Herramientas)
     │   │
-    │   └── resources/com/llaytarootvalley/tresenraya/
+    │   └── resources/com/llajtarootvalley/tictactoe/
     │       ├── view/                 # Archivos .fxml (Diseño visual)
     │       ├── css/                  # Hojas de estilo
     │       └── images/               # Assets (Iconos X/O)
