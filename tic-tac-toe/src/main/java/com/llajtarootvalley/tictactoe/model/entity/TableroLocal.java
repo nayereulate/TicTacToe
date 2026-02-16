@@ -32,8 +32,16 @@ public class TableroLocal {
         return false;
     }
     
-    private void actualizarEstado(int r, int c, Jugador player) { 
-    	
+    private void actualizarEstado(int r, int c, Jugador player) {
+        if (verificarVictoria(r, c, player)) {
+            this.estadoActual = (player == Jugador.X) ? EstadoJuego.X_GANA : EstadoJuego.O_GANA;
+        } else if (fichasColocadas == 9) {
+            this.estadoActual = EstadoJuego.EMPATE;
+        }
+    }
+
+    private boolean verificarVictoria(int r, int c, Jugador player) {
+        return false;
     }
 
 }
