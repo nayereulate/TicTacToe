@@ -21,5 +21,19 @@ public class TableroLocal {
             }
         }
     }
+    
+    public boolean marcarCasilla(int fila, int col, Jugador jugador) {
+        if (this.estadoActual == EstadoJuego.EN_PROGRESO && casillas[fila][col] == Jugador.VACIO) {
+            casillas[fila][col] = jugador;
+            fichasColocadas++;
+            actualizarEstado(fila, col, jugador);
+            return true;
+        }
+        return false;
+    }
+    
+    private void actualizarEstado(int r, int c, Jugador player) { 
+    	
+    }
 
 }
