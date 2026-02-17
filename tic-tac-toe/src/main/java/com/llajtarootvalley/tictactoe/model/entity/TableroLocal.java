@@ -48,5 +48,23 @@ public class TableroLocal {
         if (r + c == 2 && casillas[0][2] == player && casillas[1][1] == player && casillas[2][0] == player) return true;
         return false;
     }
+    
+    public EstadoJuego getEstadoActual() { 
+    	return estadoActual;
+    	}
+    
+    public Jugador getGanador() {
+        if (estadoActual == EstadoJuego.X_GANA) return Jugador.X;
+        if (estadoActual == EstadoJuego.O_GANA) return Jugador.O;
+        return Jugador.VACIO;
+    }
+
+    public boolean estaJugable() {
+    	return estadoActual == EstadoJuego.EN_PROGRESO;
+    	}
+    
+    public Jugador obtenerCasilla(int fila, int col) {
+    	return casillas[fila][col];
+    	}
 
 }
