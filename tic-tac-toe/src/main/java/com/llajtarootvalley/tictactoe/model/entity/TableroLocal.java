@@ -41,6 +41,11 @@ public class TableroLocal {
     }
 
     private boolean verificarVictoria(int r, int c, Jugador player) {
+        if (casillas[r][0] == player && casillas[r][1] == player && casillas[r][2] == player) return true;
+        if (casillas[0][c] == player && casillas[1][c] == player && casillas[2][c] == player) return true;
+        
+        if (r == c && casillas[0][0] == player && casillas[1][1] == player && casillas[2][2] == player) return true;
+        if (r + c == 2 && casillas[0][2] == player && casillas[1][1] == player && casillas[2][0] == player) return true;
         return false;
     }
 
