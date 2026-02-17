@@ -31,4 +31,16 @@ public class TableroGlobal {
         }
     }
     
+    public int getSiguienteFilaTablero() { 
+    	return siguienteFilaTablero;
+    	}
+    
+    public int getSiguienteColTablero() {
+    	return siguienteColTablero;
+    }
+    
+    public boolean esMovimientoLibre() {
+    	return siguienteFilaTablero == -1;
+    }
+    
 }
