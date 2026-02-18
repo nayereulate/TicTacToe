@@ -86,4 +86,17 @@ public class GameController {
         }
         return true;
     }
+    
+    public TableroGlobal getTableroGlobal() {
+    	return tableroGlobal;
+    	}
+    
+    public Jugador getJugadorActual() {
+    	return jugadorActual;
+    }
+    
+    public EstadoJuego getEstadoJuego() {
+    	return estadoJuego;
+    	}
+   
 }
