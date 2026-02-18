@@ -57,10 +57,33 @@ public class GameController {
     }
     
     private boolean verificarVictoriaGlobal() {
-    	return false;
+        for (int i = 0; i < 3; i++) {
+            if (checkLine(tableroGlobal.obtenerTableroLocal(i,0).getGanador(), 
+                          tableroGlobal.obtenerTableroLocal(i,1).getGanador(), 
+                          tableroGlobal.obtenerTableroLocal(i,2).getGanador())) return true;
+            if (checkLine(tableroGlobal.obtenerTableroLocal(0,i).getGanador(), 
+                          tableroGlobal.obtenerTableroLocal(1,i).getGanador(), 
+                          tableroGlobal.obtenerTableroLocal(2,i).getGanador())) return true;
+        }
+        if (checkLine(tableroGlobal.obtenerTableroLocal(0,0).getGanador(), 
+                      tableroGlobal.obtenerTableroLocal(1,1).getGanador(), 
+                      tableroGlobal.obtenerTableroLocal(2,2).getGanador())) return true;
+        if (checkLine(tableroGlobal.obtenerTableroLocal(0,2).getGanador(), 
+                      tableroGlobal.obtenerTableroLocal(1,1).getGanador(), 
+                      tableroGlobal.obtenerTableroLocal(2,0).getGanador())) return true;
+        return false;
     }
-    
+
+    private boolean checkLine(Jugador a, Jugador b, Jugador c) {
+        return a != Jugador.VACIO && a == b && b == c;
+    }
+
     private boolean verificarEmpateGlobal() {
-    	return false;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (tableroGlobal.obtenerTableroLocal(i, j).estaJugable()) return false;
+            }
+        }
+        return true;
     }
 }
